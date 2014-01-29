@@ -12,7 +12,7 @@ use Midgard\CreatePHP\Entity\CollectionInterface;
 use Midgard\CreatePHP\Entity\EntityInterface;
 
 /**
- * Base mapper for propel
+ * Base mapper for Propel ORM
  *
  * @package Midgard.CreatePHP
  */
@@ -60,7 +60,8 @@ class PropelMapper extends AbstractRdfMapper
     /**
      * {@inheritdoc}
      *
-     * Primary key and to the Propel class needed to retrieve the model.
+     * Model instance primary key and Propel class name are needed to retrieve the model.
+     * Primary is json encoded and separated with a «|» from the class name
      */
     public function createSubject($object)
     {
@@ -77,6 +78,6 @@ class PropelMapper extends AbstractRdfMapper
      */
     public function orderChildren(EntityInterface $entity, CollectionInterface $node, $expectedOrder)
     {
-        // TODO: Implement orderChildren() method.
+        // Not supported yet.
     }
 }
